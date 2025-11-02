@@ -215,6 +215,4 @@ This project is open source under the **MIT License** — free to use, remix, an
 > “Where code meets light, imagination begins.”
 > Welcome to **NeonFlux.**
 
-```
-
 
