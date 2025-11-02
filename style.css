@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
+
+html, body, #app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #050510 0%, #000 100%);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+#canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  gap: 1rem;
+  backdrop-filter: blur(6px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+h1, h2 {
+  margin: 0;
+  line-height: 1;
+  user-select: none;
+  animation: fadeIn 1.5s ease-out forwards;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+}
+
+h1 {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff00d4, #00eaff, #00ff9d, #ff00d4);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 8s infinite linear, fadeInDown 1s ease-out forwards;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 200, 0.25));
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 1.3s ease-out forwards;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  margin-top: 1.5rem;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #0072ff, #00c6ff, #0072ff);
+  background-size: 300%;
+  box-shadow: 0 0 25px rgba(0, 114, 255, 0.5);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: all 0.5s ease;
+}
+
+a:hover::before {
+  left: 100%;
+}
+
+a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 45px rgba(0, 114, 255, 0.8);
+}
+
+footer {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 2.5rem;
+  letter-spacing: 0.5px;
+  animation: fadeIn 2s ease-out forwards;
+  color: #aaa;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Parallax movement effect */
+body:hover .hero {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
