@@ -151,7 +151,6 @@ The heart of NeonFlux.
 
 ---
 
-## 🧩 Mermaid Flowchart
 
 Here’s how NeonFlux flows from load → animation → user interaction:
 
@@ -172,9 +171,10 @@ flowchart TD
 
 ---
 
-## 🔮 Visual Demo
+## 🔗 Live Demo  
+Check it out live at: [NeonFlux](https://anshumanpoddar.github.io/NeonFlux-The-Tubes-Cursor-Experience/)  
+_Interact with the cursor trails, click to change colors, and feel the glow._
 
-> *Open `index.html` in your browser and move your cursor. Click anywhere to trigger color bursts!*
 
 ---
 
